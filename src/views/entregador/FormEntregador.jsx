@@ -1,8 +1,8 @@
 import React from "react";
 import InputMask from 'react-input-mask';
-import { Button, Container, Divider, Form, Icon,  Select, FormRadio, FormGroup } from 'semantic-ui-react';
+import { Button, Container, Divider, Form, Icon, FormRadio, FormGroup, FormSelect } from 'semantic-ui-react';
 
-const countryOptions = [
+const options = [
     { key: 'PE', value: 'PE', text: 'Pernambuco' },
     { key: 'BA', value: 'BA', text: 'Bahia' },
     { key: 'RJ', value: 'RJ', text: 'Rio de Janeiro' },
@@ -136,8 +136,12 @@ export default function FormProduto() {
                                     width={5} />
                             </Form.Group>
 
-                            <h5>UF</h5>
-                            <Select placeholder='Selecione seu UF' options={countryOptions} />
+                            <FormSelect
+                                fluid
+                                label='UF'
+                                options={options}
+                                placeholder='Selecione seu UF'
+                            />
 
 
                             <Form.Input
@@ -150,19 +154,19 @@ export default function FormProduto() {
                                 <FormRadio
                                     label='Sim'
                                     value='sm'
-                                  //  checked={value === 'sm'}
-                                  //  onChange={this.handleChange}
+                                //  checked={value === 'sm'}
+                                //  onChange={this.handleChange}
                                 />
                                 <FormRadio
                                     label='Não'
                                     value='md'
-                                  //  checked={value === 'md'}
-                                  //  onChange={this.handleChange}
+                                //  checked={value === 'md'}
+                                //  onChange={this.handleChange}
                                 />
                             </FormGroup>
 
                         </Form>
-                        
+
 
                         <div style={{ marginTop: '4%' }}>
 
