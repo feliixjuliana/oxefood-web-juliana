@@ -50,7 +50,6 @@ export default function FormProduto() {
                                 </Form.Input>
 
                                 <Form.Input
-                                    required
                                     fluid
                                     label='RG'
 
@@ -61,7 +60,6 @@ export default function FormProduto() {
                             <Form.Group widths='equal'>
 
                                 <Form.Input
-                                    required
                                     fluid
                                     label='Dt Nascimento'
                                     maxLength="100"
@@ -79,21 +77,18 @@ export default function FormProduto() {
 
 
                                 <Form.Input
-                                    required
                                     fluid
                                     label='Fone Fixo'
 
                                 />
 
                                 <Form.Input
-                                    required
                                     fluid
                                     label='QTD Entregas Realizadas'
 
                                 />
 
                                 <Form.Input
-                                    required
                                     fluid
                                     label='Valor por Frente'
 
@@ -104,13 +99,11 @@ export default function FormProduto() {
 
                             <Form.Group widths='equal'>
                                 <Form.Input
-                                    required
                                     fluid
                                     label='Rua'
                                 />
 
                                 <Form.Input
-                                    required
                                     fluid
                                     label='Número'
                                     width={4} />
@@ -119,18 +112,15 @@ export default function FormProduto() {
 
                             <Form.Group widths='equal'>
                                 <Form.Input
-                                    required
                                     fluid
                                     label='Bairro'
                                 />
 
                                 <Form.Input
-                                    required
                                     fluid
                                     label='Cidade' />
 
                                 <Form.Input
-                                    required
                                     fluid
                                     label='CEP'
                                     width={5} />
@@ -145,7 +135,6 @@ export default function FormProduto() {
 
 
                             <Form.Input
-                                required
                                 fluid
                                 label='Complemento' />
 
