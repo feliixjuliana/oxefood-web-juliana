@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import InputMask from 'react-input-mask';
 import { Button, Container, Divider, Form, Icon, FormRadio, FormGroup, FormSelect } from 'semantic-ui-react';
+import MenuSistema from '../../MenuSistema';
 
 const options = [
     { key: 'PE', value: 'PE', text: 'Pernambuco' },
@@ -10,6 +11,8 @@ const options = [
 ]
 
 export default function FormEntregador() {
+
+ 
 
     const [nome, setNome] = useState();
     const [cpf, setCpf] = useState();
@@ -63,7 +66,8 @@ export default function FormEntregador() {
     return (
 
         <div>
-
+          <MenuSistema />
+          
             <div style={{ marginTop: '3%' }}>
 
                 <Container textAlign='justified' >
