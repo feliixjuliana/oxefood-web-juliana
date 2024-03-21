@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import InputMask from 'react-input-mask';
-import { Button, Container, Divider, Form, Icon, FormRadio, FormGroup, FormSelect } from 'semantic-ui-react';
+import { Button, Container, Divider, Form, FormGroup, FormRadio, FormSelect, Icon } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
+import { Link } from "react-router-dom";
 
 const options = [
     { key: 'PE', value: 'PE', text: 'Pernambuco' },
@@ -247,7 +248,7 @@ export default function FormEntregador() {
                                 color='orange'
                             >
                                 <Icon name='reply' />
-                                Voltar
+                                <Link to={'/list-entregador'}>Voltar</Link>
                             </Button>
 
                             <Button
