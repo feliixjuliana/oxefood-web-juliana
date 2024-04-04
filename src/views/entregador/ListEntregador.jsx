@@ -19,6 +19,7 @@ export default function ListEntregador() {
                 setLista(response.data)
             })
     }
+
     function formatarData(dataParam) {
 
         if (dataParam === null || dataParam === '' || dataParam === undefined) {
@@ -94,14 +95,15 @@ export default function ListEntregador() {
                                         <Table.Cell>{entregador.enderecoCep}</Table.Cell>
                                         <Table.Cell>{trueOrFalse(entregador.ativo)}</Table.Cell>
                                         <Table.Cell textAlign='center'>
+                                            
 
                                             <Button
                                                 inverted
                                                 circular
                                                 color='green'
-                                                title='Clique aqui para editar os dados deste cliente'
+                                                title='Clique aqui para editar os dados deste entregador'
                                                 icon>
-                                                <Icon name='edit' />
+                                                <Link to="/form-entregador" state={{id: entregador.id}} style={{color: 'green'}}> <Icon name='edit' /> </Link>
                                             </Button> &nbsp;
 
                                             <Button
