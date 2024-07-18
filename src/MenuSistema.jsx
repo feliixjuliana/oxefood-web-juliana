@@ -55,6 +55,15 @@ class MenuSistema extends React.Component{
                        to='/list-fornecedor'
                    />
 
+                    <Menu.Item
+                       name='fabricante'
+                       active={this.state.activeItem === 'fabricante'}
+                       onClick={this.handleItemClick}
+                       as={Link}
+                       to='/list-fabricante'
+                   />
+
+
                </Menu>
            </>
        )
