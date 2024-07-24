@@ -16,6 +16,8 @@ export default function FormProduto() {
     const [valorUnitario, setValorUnitario] = useState();
     const [tempoEntregaMinimo, setTempoEntregaMinimo] = useState();
     const [tempoEntregaMaximo, setTempoEntregaMaximo] = useState();
+    const [listaCategoria, setListaCategoria] = useState([]);
+    const [idCategoria, setIdCategoria] = useState();
 
     useEffect(() => {
         if (state != null && state.id != null) {
@@ -28,20 +30,29 @@ export default function FormProduto() {
                     setValorUnitario(response.data.valorUnitario);
                     setTempoEntregaMinimo(response.data.tempoEntregaMinimo);
                     setTempoEntregaMaximo(response.data.tempoEntregaMaximo);
+                    setIdCategoria(response.data.categoria.id);
+           })
+       }
 
-                })
-        }
-    }, [state])
+       axios.get("http://localhost:8081/api/categoriaProduto")
+       .then((response) => {
+           const dropDownCategorias = response.data.map(c => ({ text: c.descricao, value: c.id }));
+           setListaCategoria(dropDownCategorias);
+       })
+
+        }, [state])
 
     function salvar() {
 
         let produtoRequest = {
+            idCategoria: idCategoria,
             codigo: codigo,
             titulo: titulo,
             descricao: descricao,
             valorUnitario: valorUnitario,
             tempoEntregaMinimo: tempoEntregaMinimo,
             tempoEntregaMaximo: tempoEntregaMaximo
+
 
         }
 
@@ -70,7 +81,7 @@ export default function FormProduto() {
                     {idProduto === undefined &&
                         <h2> <span style={{ color: 'darkgray' }}> Produto &nbsp;<Icon name='angle double right' size="small" /> </span> Cadastro</h2>
                     }
-                    {idProduto != undefined &&
+                    {idProduto !== undefined &&
                         <h2> <span style={{ color: 'darkgray' }}> Produto &nbsp;<Icon name='angle double right' size="small" /> </span> Alteração</h2>
                     }
 
@@ -103,6 +114,19 @@ export default function FormProduto() {
                                 />
 
                             </Form.Group>
+
+                            <Form.Select
+	                        required
+	                        fluid
+	                        tabIndex='3'
+	                        placeholder='Selecione'
+	                        label='Categoria'
+	                        options={listaCategoria}
+	                        value={idCategoria}
+	                        onChange={(e,{value}) => {
+	                    	setIdCategoria(value)
+	                        }}
+/>
 
 
                             <FormTextArea
